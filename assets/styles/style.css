@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+:root{
+    --color1: #EEF1FF;
+    --color2: #121481;
+    --color3: #ECF2FF;
+    --fuente: "Inter", sans-serif;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background-color: var(--color1);
+}
+
+main {
+    display: flex;
+    justify-content: space-around;
+}
+
+header {
+    margin-bottom: 5rem;
+    width: 60%
+}
+
+header img {
+    width: 120px;
+    height: 48px;
+}
+
+.form__section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 85dvh;
+}
+
+.form__input {
+    width: 100%;
+    max-width: 577px;
+    height: 64dvh;
+    border-color: transparent;
+    background: transparent;
+    outline: none;
+    font-family: var(--fuente);
+    color: var(--color2);
+    font-size: 3.2rem;
+    margin-bottom: 3rem;
+    overflow: auto;
+}
+
+::placeholder {
+    font-family: var(--fuente);
+    color: var(--color2);
+    font-size: 3.2rem;
+}
+
+.alert__msj {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    font-size: 1.7rem;
+    font-family: var(--fuente);
+    margin-bottom: 1.5rem;
+}
+
+.submit__container {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.form__btn {
+    width: 328px;
+    height: 67px;
+    background-color: var(--color2);
+    color: #FFFFFF;
+    font-size: 1.6rem;
+    padding: 1rem 2rem;
+    border-radius: 24px;
+    border: 1px solid var(--color2);
+    font-weight: 600;
+}
+
+.form__btn--secundary {
+    background: transparent;
+    color: var(--color2);
+}
+
+.result {
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10rem;
+    height: 92dvh;
+    border-radius: 32px;
+    max-width: 40rem;
+    width: 100%;
+    font-family: var(--fuente);
+}
+
+.result__img {
+    width: 35rem;
+    display: block;
+}
+
+.hidden {
+    display: none;
+}
+
+@media screen and (max-width: 768px){
+    main {
+        flex-direction: column;
+    }
+
+    header img {
+        width: 85px;
+    }
+
+    .result {
+        height: auto;
+        max-width: 624px;
+        margin-top: 2rem;
+        min-height: 186px;
+    }
+
+    .result__img {
+        display: none;
+    }
+
+    .submit__container {
+        justify-content: center;
+    }
+
+    .loader {
+        display: none;
+    }
+}
+
+.loader {
+    width: 120px;
+    height: 22px;
+    border-radius: 40px;
+    color: #514b82;
+    border: 2px solid;
+    position: relative;
+  }
+  .loader::before {
+    content: "";
+    position: absolute;
+    margin: 2px;
+    width: 25%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: inherit;
+    background: currentColor;
+    animation: l3 1s infinite linear;
+  }
+  @keyframes l3 {
+      50% {left:100%;transform: translateX(calc(-100% - 4px))}
+  }
